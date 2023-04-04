@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1>Edit Profile</h1>
+  <form method="post" id="profile-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="button" class="btn btn-secondary" onclick="saveAndReturn()">Save</button>
+  </form>
+</div>
+
+<script>
+  function saveAndReturn() {
+    // Submit the form
+    document.getElementById('profile-form').submit();
+    
+    // Redirect to the home page
+    window.location.href = "{% url 'home' %}";
+  }
+</script>
+{% endblock %}

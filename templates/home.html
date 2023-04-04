@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block content %}
+<head>
+<style>
+  .foot{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:navy;
+    color:white;
+    font-weight:700;
+    padding:20px;
+  }
+  body{
+    background:cadetblue;
+  }
+ .oo{
+    background:cadetblue;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+  }.cc{
+    margin-left:40%;
+  }
+  .oo p{
+    background:salmon;
+    border-radius:10px;
+    padding:10px;
+    width:500px;
+    border:5px solid black;
+  }.ok{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:whitesmoke;
+    padding:20px;
+    margin-bottom:30px;
+  }
+</style>
+</head>
+
+<html>
+  <head>
+  </head>
+  <body>
+    <div class="foot">
+      
+      <h4>Contact : 01907518977</h4>
+      <h4>Email : jucse28.389@gmail.com</h4>
+    </div>
+    <div class="ok">
+      <h1><b>RMN Society</b></h1>
+      <h3>Welcome to Our Society</h3>
+      <p style="color: red">Our Target is to provide you the best service.</p>
+    <!--</div>
+    <div class="oo">
+      <h2>Notice</h2>
+        {% for i in ar %}
+         <p>{{i.name}} {{i.type}} is off on {{i.date}} </p>
+        {%endfor%}
+    </div>-->
+  </div>
+    
+  </body>
+</html>
+  
+{% endblock %}

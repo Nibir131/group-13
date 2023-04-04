@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    
+      body{
+        background:cadetblue;
+      }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            width:60vw;
+            margin-left:25%;
+            background:lightseagreen;
+          }
+          
+          th, td {
+            text-align: left;
+            padding: 8px;
+          }
+          table a{
+            color:black;
+          }
+          th {
+            background-color: black;
+            color: white;
+          }
+</style>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Date of Rent</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in c %}
+        <tr>
+            <td>{{ book.center_name }}</td>
+            <td>{{ book.type }}</td>
+            <td>{{ book.req_date }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock%}

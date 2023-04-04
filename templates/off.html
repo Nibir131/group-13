@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{%block content%}
+<center>
+    <style>
+        .ul {
+			list-style-type: none; /* Remove bullet points */
+			padding: 0;
+			margin: 30px auto;
+			max-width: 600px;
+		}
+        .my-div {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }          
+    </style>
+    <ul class="ul">
+        <div class="my-div">
+        <li><a class="button" href="{% url 'c_of' %}"><b>Community Center</b></a></li>
+        </div class="my-div">
+        <div class="my-div">
+        <li><a class="button" href="{% url 'p_of' %}"><b>Plot</b></a></li>
+        </div>
+        <div class="my-div">
+        <li><a class="button" href="{% url 'pl_of' %}"><b>Playground</b></a></li>
+        </div>
+      </ul>
+      
+</center>
+{%endblock%}

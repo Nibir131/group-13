@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+
+  /* Style the form container */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  /* Style the label for the name field */
+  label[for="name"] {
+    margin-bottom: 10px;
+  }
+  
+  /* Style the select dropdown for the name field */
+  select[name="name"] {
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  
+  /* Style the label for the date field */
+  label[for="date_field"] {
+    margin-bottom: 10px;
+  }
+  
+  /* Style the date input field */
+  input[type="date"] {
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  
+  /* Style the submit button */
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  
+</style>
+
+<form method="POST">
+    {% csrf_token %}
+    <label for="name">Select Center</label>
+    <select name="name">
+        {% for i in ar %}
+        <option value="{{ i.name }}">{{ i.name }}</option>
+        {% endfor %}
+      </select>
+    <label for="date_field">Choose Date</label>
+  <input type="date" id="date_field" name="date_field">
+  <button type="submit">Submit</button>
+</form>
+{% endblock%}

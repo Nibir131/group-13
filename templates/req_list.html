@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+</style>
+<table>
+    <thead>
+        <tr>
+            <th>Requested By</th>
+            <th>Requested Center</th>
+            <th>Requested Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.user_id }}</td>
+            <td>{{ book.com_id }}</td>
+            <td>{{ book.date }}</td>
+            <td> 
+                <form method='POST'>
+                 {%csrf_token%}
+                <button type='submit' name='delete' value="{{book.user_id}}">Delete</button>
+                 </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock%}
